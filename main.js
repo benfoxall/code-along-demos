@@ -1,9 +1,13 @@
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)
 
-const osc = audioCtx.createOscillator()
-osc.frequency.value = 440
+const play = frequency => {
 
-osc.start()
-osc.stop(audioCtx.currentTime + .5)
+  const osc = audioCtx.createOscillator()
+  osc.frequency.value = frequency
 
-osc.connect(audioCtx.destination)
+  osc.start()
+  osc.stop(audioCtx.currentTime + .5)
+
+  osc.connect(audioCtx.destination)
+
+}

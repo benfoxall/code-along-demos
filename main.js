@@ -9,4 +9,6 @@ const start = document.createElement('button')
 start.innerText = 'play'
 document.body.appendChild(start)
 
-//play(440)
+start.addEventListener('click', e =>
+  play(freq.value)
+)

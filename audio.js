@@ -1,5 +1,8 @@
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)
 
+export const analyser = audioCtx.createAnalyser()
+analyser.connect(audioCtx.destination)
+
 export const play = frequency => {
 
   const osc = audioCtx.createOscillator()
@@ -8,6 +11,6 @@ export const play = frequency => {
   osc.start()
   osc.stop(audioCtx.currentTime + .5)
 
-  osc.connect(audioCtx.destination)
+  osc.connect(analyser)
 
 }

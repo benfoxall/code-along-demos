@@ -22,3 +22,15 @@ const drawWave = data => {
   }
   ctx.stroke()
 }
+
+
+const data = new Float32Array(analyser.fftSize)
+function r(t){
+
+  analyser.getFloatTimeDomainData(data)
+
+  drawWave(data)
+
+  requestAnimationFrame(r)
+}
+requestAnimationFrame(r)

@@ -1,1 +1,1 @@
-//main.js
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)

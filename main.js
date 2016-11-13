@@ -9,6 +9,10 @@ const start = document.createElement('button')
 start.innerText = 'play'
 document.body.appendChild(start)
 
-start.addEventListener('click', e =>
-  play(freq.value)
-)
+const onSubmit = (fn) => {
+  start.addEventListener('click', e =>
+    fn(freq.value)
+  )
+}
+
+onSubmit( f => play(f) )

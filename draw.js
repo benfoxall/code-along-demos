@@ -31,3 +31,15 @@ export function loop(fn){
     fn(t)
   })
 }
+
+
+export const drawEdges = (edges, transform) => {
+  ctx.beginPath()
+  edges
+  .map(e => e.map(p => transform.multiply(p)))
+  .forEach( ([a,b]) => {
+    ctx.moveTo(a.e(1), a.e(2))
+    ctx.lineTo(b.e(1), b.e(2))
+  })
+  ctx.stroke()
+}

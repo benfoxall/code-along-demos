@@ -1,7 +1,7 @@
 //+https://cdnjs.cloudflare.com/ajax/libs/sylvester/0.1.3/sylvester.min.js
 
 import {loop, drawEdges} from 'draw.js'
-import {scale, rotateX, rotateY, rotateZ} from 'math.js'
+import {scale, rotateX, rotateY, rotateZ, perspective} from 'math.js'
 
 const points = [
   [-10,-10,+10],
@@ -24,9 +24,9 @@ const edges = [
 
 loop( time => {
   const t = scale(2)
-  	.x(rotateZ(time/3000))
-  	.x(rotateX(time/1500))
+    .x(rotateZ(time/3000))
+    .x(rotateX(time/1500))
 
-  drawEdges(edges, t)
+  drawEdges(edges, t, perspective)
 
 })

@@ -33,10 +33,10 @@ export function loop(fn){
 }
 
 
-export const drawEdges = (edges, transform) => {
+export const drawEdges = (edges, transform, map = i=>i ) => {
   ctx.beginPath()
   edges
-  .map(e => e.map(p => transform.multiply(p)))
+  .map(e => e.map(p => map(transform.multiply(p))))
   .forEach( ([a,b]) => {
     ctx.moveTo(a.e(1), a.e(2))
     ctx.lineTo(b.e(1), b.e(2))

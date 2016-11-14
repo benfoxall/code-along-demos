@@ -23,7 +23,9 @@ const edges = [
 ]
 
 loop( time => {
-  const t = scale(2).x(rotateZ(time/3000))
+  const t = scale(2)
+  	.x(rotateZ(time/3000))
+  	.x(rotateX(time/1500))
 
   drawEdges(edges, t)
 

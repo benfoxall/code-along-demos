@@ -1,18 +1,9 @@
 //+https://cdnjs.cloudflare.com/ajax/libs/sylvester/0.1.3/sylvester.min.js
 
 import {ctx} from 'draw.js'
+import {scale, rotate} from 'math.js'
 
 const drawPoint = p => ctx.fillRect(p.e(1)-2, p.e(2)-2, 4, 4)
-
-const scale = s => $M([
-  [s, 0],
-  [0, s]
-])
-
-const rotate = theta => $M([
-  [Math.cos(theta), -Math.sin(theta)],
-  [Math.sin(theta), Math.cos(theta)],
-])
 
 const points = [
   [-10,-10],

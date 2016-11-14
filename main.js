@@ -3,8 +3,6 @@
 import {ctx, loop} from 'draw.js'
 import {scale, rotate} from 'math.js'
 
-const drawPoint = p => ctx.fillRect(p.e(1)-2, p.e(2)-2, 4, 4)
-
 const drawEdge = ([a,b]) => {
   ctx.beginPath()
   ctx.moveTo(a.e(1), a.e(2))
@@ -24,10 +22,6 @@ const edges = [[p1, p2], [p2, p3], [p3, p4], [p4, p1]]
 
 loop( time => {
   const t = scale(2).x(rotate(time/3000))
-
-  points
-    .map(p => t.multiply(p))
-    .forEach(drawPoint)
 
   edges
     .map(e => e.map(p => t.multiply(p)))

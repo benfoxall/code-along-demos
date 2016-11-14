@@ -1,6 +1,6 @@
 //+https://cdnjs.cloudflare.com/ajax/libs/sylvester/0.1.3/sylvester.min.js
 
-import {ctx, clear} from 'draw.js'
+import {ctx, loop} from 'draw.js'
 import {scale, rotate} from 'math.js'
 
 const drawPoint = p => ctx.fillRect(p.e(1)-2, p.e(2)-2, 4, 4)
@@ -19,11 +19,3 @@ loop( t => {
     .map(p => rotate(t/3000).multiply(p))
     .forEach(drawPoint)
 })
-
-function loop(fn){
-  requestAnimationFrame(function wrapped(t){
-    clear()
-    requestAnimationFrame(wrapped)
-    fn(t)
-  })
-}

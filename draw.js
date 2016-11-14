@@ -22,3 +22,12 @@ window.addEventListener('resize', size)
 export const clear = () => {
   ctx.clearRect(-w/2,-h/2,w,h)
 }
+
+
+export function loop(fn){
+  requestAnimationFrame(function wrapped(t){
+    clear()
+    requestAnimationFrame(wrapped)
+    fn(t)
+  })
+}

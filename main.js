@@ -13,12 +13,10 @@ const points = [
 ].map(v => $V(v))
 
 
-loop( t => {
-  const s = scale(2)
-  const r = rotate(t/3000)
+loop( time => {
+  const t = scale(2).x(rotate(time/3000))
 
   points
-    .map(p => s.multiply(p))
-    .map(p => r.multiply(p))
+    .map(p => t.multiply(p))
     .forEach(drawPoint)
 })

@@ -18,3 +18,7 @@ const size = _ => {
 size()
 
 window.addEventListener('resize', size)
+
+export const clear = () => {
+  ctx.clearRect(-w/2,-h/2,w,h)
+}

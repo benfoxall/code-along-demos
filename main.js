@@ -14,8 +14,11 @@ const points = [
 
 
 loop( t => {
+  const s = scale(2)
+  const r = rotate(t/3000)
+
   points
-    .map(p => scale(2).multiply(p))
-    .map(p => rotate(t/3000).multiply(p))
+    .map(p => s.multiply(p))
+    .map(p => r.multiply(p))
     .forEach(drawPoint)
 })

@@ -4,6 +4,11 @@ import {ctx} from 'draw.js'
 
 const drawPoint = p => ctx.fillRect(p.e(1)-2, p.e(2)-2, 4, 4)
 
+const scale = s => $M([
+  [s, 0],
+  [0, s]
+])
+
 const points = [
   [-10,-10],
   [-10,+10],
@@ -12,4 +17,5 @@ const points = [
 ].map(v => $V(v))
 
 points
+  .map(p => scale(2).multiply(p))
   .forEach(drawPoint)

@@ -22,8 +22,12 @@ const edges = [
   [p1, p5], [p2, p6], [p3, p7], [p4, p8]
 ]
 
+let orientation = scale(1)
+
 loop( time => {
-  const t = scale(2)
+  const t =
+    orientation
+    .x(scale(2))
     .x(rotateZ(time/3000))
     .x(rotateX(time/1500))
 

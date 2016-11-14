@@ -5,6 +5,13 @@ import {scale, rotate} from 'math.js'
 
 const drawPoint = p => ctx.fillRect(p.e(1)-2, p.e(2)-2, 4, 4)
 
+const drawEdge = ([a,b]) => {
+  ctx.beginPath()
+  ctx.moveTo(a.e(1), a.e(2))
+  ctx.lineTo(b.e(1), b.e(2))
+  ctx.stroke()
+}
+
 const points = [
   [-10,-10],
   [-10,+10],

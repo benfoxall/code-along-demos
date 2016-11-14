@@ -28,4 +28,8 @@ loop( time => {
   points
     .map(p => t.multiply(p))
     .forEach(drawPoint)
+
+  edges
+    .map(e => e.map(p => t.multiply(p)))
+    .forEach(drawEdge)
 })

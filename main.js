@@ -34,3 +34,13 @@ loop( time => {
   drawEdges(edges, t, perspective)
 
 })
+
+const torad = Math.PI/180
+window.addEventListener('deviceorientation', (e) => {
+
+  orientation =
+    rotateY(e.gamma*torad)
+    .x(rotateX(e.beta*torad))
+    .x(rotateZ(e.alpha*torad))
+
+}, false)

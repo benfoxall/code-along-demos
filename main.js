@@ -9,6 +9,11 @@ const scale = s => $M([
   [0, s]
 ])
 
+const rotate = theta => $M([
+  [Math.cos(theta), -Math.sin(theta)],
+  [Math.sin(theta), Math.cos(theta)],
+])
+
 const points = [
   [-10,-10],
   [-10,+10],
@@ -18,4 +23,5 @@ const points = [
 
 points
   .map(p => scale(2).multiply(p))
+  .map(p => rotate(Math.PI/4).multiply(p))
   .forEach(drawPoint)
